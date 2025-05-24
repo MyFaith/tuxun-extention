@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "地理探索助手",
+  "version": "1.0",
+  "description": "帮助分析地理位置特征的浏览器插件",
+  "permissions": ["activeTab", "storage", "scripting", "tabs", "desktopCapture"],
+  "host_permissions": ["*://*.tuxun.fun/*", "*://*.google.com/*"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["styles/toast.css"],
+      "matches": ["*://*.tuxun.fun/*", "*://*.google.com/*"]
+    }
+  ],
+  "commands": {
+    "analyze-location": {
+      "description": "分析当前位置"
+    }
+  }
+}

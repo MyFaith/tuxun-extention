@@ -1,0 +1,100 @@
+.toast-container {
+  position: fixed;
+  top: 150px;
+  left: 50%;
+  right: auto;
+  transform: translateX(-50%);
+  z-index: 999999;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.toast {
+  background-color: rgba(33, 33, 33, 0.95);
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  max-width: 800px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  line-height: 1.5;
+}
+
+.toast-close {
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 1;
+  padding: 4px;
+  opacity: 0.7;
+  transition: all 0.2s ease;
+  color: #fff;
+  border-radius: 4px;
+  margin-left: auto;
+}
+
+.toast-close:hover {
+  opacity: 1;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.toast-timer {
+  font-family: 'SF Mono', Menlo, Monaco, Consolas, monospace;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0 4px;
+  min-width: 36px;
+  text-align: right;
+  padding: 2px 6px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+.toast-persistent {
+  animation: fadeInScale 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transform-origin: top right;
+}
+
+@keyframes fadeInScale {
+  0% { 
+    opacity: 0; 
+    transform: scale(0.8);
+  }
+  100% { 
+    opacity: 1; 
+    transform: scale(1);
+  }
+}
+
+.toast-temporary {
+  animation: fadeInOutScale 1s ease-in-out;
+  background-color: rgba(33, 33, 33, 0.9);
+  padding: 12px 18px;
+  font-size: 13px;
+  transform-origin: top right;
+}
+
+@keyframes fadeInOutScale {
+  0% { 
+    opacity: 0; 
+    transform: scale(0.8);
+  }
+  20% { 
+    opacity: 1; 
+    transform: scale(1);
+  }
+  80% { 
+    opacity: 1; 
+    transform: scale(1);
+  }
+  100% { 
+    opacity: 0; 
+    transform: scale(0.8);
+  }
+} 
