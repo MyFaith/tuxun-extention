@@ -49,7 +49,9 @@ async function analyzeLocation(screenshot) {
                 },
                 {
                   type: "image_url",
-                  image_url: screenshot
+                  image_url: {
+                    url: screenshot
+                  }
                 }
               ]
             }
